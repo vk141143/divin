@@ -1,11 +1,8 @@
 [build]
-  command = "npm run build"
-  publish = ".output/public"
+  command = "npm install && npm run build"
+  publish = ".netlify/static"
 
 [build.environment]
   NODE_VERSION = "20"
-
-[[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/server"
-  status = 200
+  CI = "false"
+  NITRO_PRESET = "netlify"
