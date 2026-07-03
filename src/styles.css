@@ -1,0 +1,193 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-saffron: var(--saffron);
+  --color-gold: var(--gold);
+  --color-bronze: var(--bronze);
+  --color-sandstone: var(--sandstone);
+  --color-ivory: var(--ivory);
+  --color-maroon: var(--maroon);
+  --color-lotus: var(--lotus);
+  --color-peacock: var(--peacock);
+  --color-copper: var(--copper);
+  --color-parchment: var(--parchment);
+  --color-ink: var(--ink);
+
+  --font-serif: "Cormorant Garamond", "Cardo", serif;
+  --font-display: "Cinzel", "Cormorant Garamond", serif;
+  --font-body: "Cardo", "Cormorant Garamond", serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-devanagari: "Noto Serif Devanagari", "Cardo", serif;
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Sacred palette */
+  --saffron: oklch(0.68 0.17 55);
+  --gold: oklch(0.78 0.14 82);
+  --bronze: oklch(0.52 0.11 60);
+  --sandstone: oklch(0.86 0.06 75);
+  --ivory: oklch(0.96 0.03 85);
+  --parchment: oklch(0.92 0.05 82);
+  --maroon: oklch(0.35 0.12 25);
+  --lotus: oklch(0.72 0.13 15);
+  --peacock: oklch(0.42 0.12 210);
+  --copper: oklch(0.58 0.14 45);
+  --ink: oklch(0.22 0.04 45);
+
+  --background: oklch(0.14 0.02 45);
+  --foreground: var(--ivory);
+  --card: var(--parchment);
+  --card-foreground: var(--ink);
+  --popover: var(--parchment);
+  --popover-foreground: var(--ink);
+  --primary: var(--saffron);
+  --primary-foreground: var(--ivory);
+  --secondary: var(--maroon);
+  --secondary-foreground: var(--ivory);
+  --muted: oklch(0.88 0.04 82);
+  --muted-foreground: oklch(0.42 0.06 55);
+  --accent: var(--gold);
+  --accent-foreground: var(--ink);
+  --destructive: oklch(0.55 0.2 25);
+  --destructive-foreground: var(--ivory);
+  --border: oklch(0.7 0.11 70 / 0.35);
+  --input: oklch(0.7 0.1 70 / 0.4);
+  --ring: var(--gold);
+
+  --gradient-gold: linear-gradient(135deg, oklch(0.85 0.14 85) 0%, oklch(0.68 0.15 55) 50%, oklch(0.48 0.11 40) 100%);
+  --gradient-parchment: linear-gradient(180deg, oklch(0.94 0.04 82) 0%, oklch(0.88 0.06 75) 100%);
+  --gradient-sacred: radial-gradient(ellipse at top, oklch(0.35 0.1 55) 0%, oklch(0.18 0.05 40) 55%, oklch(0.1 0.02 40) 100%);
+  --shadow-diya: 0 0 60px oklch(0.78 0.16 65 / 0.5), 0 0 20px oklch(0.85 0.15 55 / 0.6);
+  --shadow-manuscript: 0 20px 50px -20px oklch(0.15 0.05 40 / 0.6), 0 6px 20px -10px oklch(0.35 0.1 40 / 0.5);
+  --shadow-inset-gold: inset 0 0 0 1px oklch(0.75 0.14 75 / 0.5), inset 0 0 30px oklch(0.7 0.13 65 / 0.15);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html, body {
+    background: var(--gradient-sacred);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@utility font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.08em;
+}
+@utility font-serif {
+  font-family: var(--font-serif);
+}
+@utility font-devanagari {
+  font-family: var(--font-devanagari);
+}
+
+@utility text-gold-shimmer {
+  background: linear-gradient(120deg,
+    oklch(0.7 0.14 65) 0%,
+    oklch(0.92 0.14 88) 40%,
+    oklch(0.98 0.06 90) 50%,
+    oklch(0.85 0.15 78) 60%,
+    oklch(0.6 0.13 50) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+@utility bg-parchment {
+  background-image: var(--gradient-parchment);
+  background-color: var(--parchment);
+}
+
+@utility bg-sacred {
+  background: var(--gradient-sacred);
+}
+
+@utility bg-gold-gradient {
+  background: var(--gradient-gold);
+}
+
+@utility shadow-diya {
+  box-shadow: var(--shadow-diya);
+}
+@utility shadow-manuscript {
+  box-shadow: var(--shadow-manuscript);
+}
+@utility ring-gold-inset {
+  box-shadow: var(--shadow-inset-gold);
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+@keyframes flicker {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(0.97); }
+}
+@keyframes drift {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.4; }
+  100% { transform: translateY(-120vh) translateX(20px); opacity: 0; }
+}
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes petal-fall {
+  0% { transform: translateY(-10%) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.7; }
+  100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@utility animate-flicker { animation: flicker 3s ease-in-out infinite; }
+@utility animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+@utility animate-rotate-slow { animation: rotate-slow 60s linear infinite; }
+@utility animate-fade-up { animation: fade-up 1.2s ease-out both; }
