@@ -7,6 +7,7 @@ import gitaArt from "@/assets/gita.jpg";
 import ramayanaArt from "@/assets/ramayana.jpg";
 import templeCard from "@/assets/temple-card.jpg";
 import meditationArt from "@/assets/meditation.jpg";
+import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -539,6 +540,7 @@ function Index() {
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-sacred text-ivory">
+      <ThemeSwitcher />
       <Diyas />
       <Particles />
       <Petals />

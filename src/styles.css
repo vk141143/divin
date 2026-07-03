@@ -187,6 +187,23 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes ripple-expand {
+  0%   { transform: scale(0); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes icon-spin-glow {
+  0%   { transform: scale(1)   rotate(0deg);   box-shadow: 0 4px 20px oklch(0.78 0.14 82 / 0.25); }
+  50%  { transform: scale(1.2) rotate(180deg); box-shadow: 0 0 32px oklch(0.85 0.16 82 / 0.7), 0 0 60px oklch(0.78 0.14 82 / 0.35); }
+  100% { transform: scale(1)   rotate(360deg); box-shadow: 0 4px 20px oklch(0.78 0.14 82 / 0.25); }
+}
+
+@keyframes icon-spin-glow-sun {
+  0%   { transform: scale(1)   rotate(0deg);   box-shadow: 0 4px 20px oklch(0.75 0.16 85 / 0.3); }
+  50%  { transform: scale(1.2) rotate(180deg); box-shadow: 0 0 32px oklch(0.85 0.18 85 / 0.75), 0 0 60px oklch(0.75 0.16 85 / 0.4); }
+  100% { transform: scale(1)   rotate(360deg); box-shadow: 0 4px 20px oklch(0.75 0.16 85 / 0.3); }
+}
+
 @utility animate-flicker { animation: flicker 3s ease-in-out infinite; }
 @utility animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
 @utility animate-rotate-slow { animation: rotate-slow 60s linear infinite; }
